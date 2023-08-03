@@ -162,7 +162,7 @@ func SetLogger(opts ...Option) gin.HandlerFunc {
 			ctx := l.With().
 				Int("status", statusCode).
 				Str("method", c.Request.Method).
-				Str("path", c.Request.URL.Path)
+				Str("path", path)
 			if cfg.logRequestBody {
 				ctx = ctx.Logger().With().Str("body", requestBody)
 			}
